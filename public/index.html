@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
+    <title>Tell me this isn't a SPA</title>
+  </head>
+  <body class="dark">
+    <button id="hamburger" aria-label="Open Menu">☰</button>
+    <nav>
+      <ul>
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/about">About</a>
+        </li>
+        <li>
+          <a href="/events">Events</a>
+        </li>
+        <li>
+          <a href="/products">Products</a>
+        </li>
+        <li>
+          <a href="/cart">Cart</a>
+          <span id="cart-count"></span>
+          <span id="cart-total"></span>
+        </li>
+        <li>
+          <a href="/checkout">Checkout</a>
+        </li>
+        <li>
+          <input
+            aria-label="Search"
+            type="text"
+            placeholder="Search"
+            id="search"
+          />
+        </li>
+        <li>
+          <button id="toggleTheme">Toggle Theme</button>
+        </li>
+      </ul>
+    </nav>
+    <span id="toast-container"></span>
+    <main class="main"></main>
+    <footer>
+      <a href="http://jazzypants.dev"> © 2023 Jovial Penguin, LLC.</a>
+    </footer>
+    <script src="/importmap.js"></script>
+    <script async src="/App.js" type="module"></script>
+  </body>
+</html>
