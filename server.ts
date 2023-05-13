@@ -7,6 +7,7 @@ import {
 import Stripe from "https://esm.sh/stripe@12.3.0"
 
 let STRIPE_SECRET_KEY = Deno.env.get("STRIPE_SECRET_KEY")
+console.log("STRIPE_SECRET_KEY", STRIPE_SECRET_KEY)
 
 if (!STRIPE_SECRET_KEY) {
   // throw new Error("No Stripe API key found in environment")
@@ -40,8 +41,11 @@ const handler = async (request: Request): Promise<Response> => {
   // make sure that non-asset requests fall through to the
   // serveDir handler and get redirected to the root index.html
   if (!request.url.split("/").pop()?.includes(".")) {
+    console.log(request.url.split("/").pop(), "serving index.html")
     return serveFile(request, "public/index.html")
   }
+
+  console.log(request.url.split("/").pop(), "serving different static file")
 
   return serveDir(request, {
     showIndex: true,
